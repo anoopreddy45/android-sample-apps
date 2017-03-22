@@ -38,6 +38,8 @@ public class CastMediaRouterCallback extends MediaRouter.Callback {
     private final BaseCastManager mCastManager;
     private boolean mRouteAvailable = false;
 
+
+
     public CastMediaRouterCallback(BaseCastManager castManager) {
         mCastManager = castManager;
     }
@@ -50,6 +52,9 @@ public class CastMediaRouterCallback extends MediaRouter.Callback {
             mCastManager.setReconnectionStatus(BaseCastManager.RECONNECTION_STATUS_INACTIVE);
             mCastManager.cancelReconnectionTask();
             return;
+
+
+
         }
         mCastManager.getPreferenceAccessor().saveStringToPreference(
                 BaseCastManager.PREFS_KEY_ROUTE_ID, info.getId());
@@ -63,12 +68,16 @@ public class CastMediaRouterCallback extends MediaRouter.Callback {
         LOGD(TAG, "onRouteUnselected: route=" + route);
         mCastManager.onDeviceSelected(null);
     }
+@override
 
     @Override
     public void onRouteAdded(MediaRouter router, RouteInfo route) {
         if (!router.getDefaultRoute().equals(route)) {
             notifyRouteAvailabilityChangedIfNeeded(router);
             mCastManager.onCastDeviceDetected(route);
+
+
+
         }
         if (mCastManager.getReconnectionStatus()
                 == BaseCastManager.RECONNECTION_STATUS_STARTED) {

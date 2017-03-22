@@ -88,12 +88,19 @@ public abstract class BaseCastManager
     public static final int RECONNECTION_STATUS_FINALIZED = 3;
     public static final int RECONNECTION_STATUS_INACTIVE = 4;
 
+
+
+
     public static final int FEATURE_DEBUGGING = 1;
     public static final int FEATURE_LOCKSCREEN = 1 << 1;
     public static final int FEATURE_NOTIFICATION = 1 << 2;
     public static final int FEATURE_WIFI_RECONNECT = 1 << 3;
     public static final int FEATURE_CAPTIONS_PREFERENCE = 1 << 4;
     public static final int FEATURE_AUTO_RECONNECT = 1 << 5;
+
+
+
+
 
     public static final String PREFS_KEY_SESSION_ID = "session-id";
     public static final String PREFS_KEY_SSID = "ssid";
